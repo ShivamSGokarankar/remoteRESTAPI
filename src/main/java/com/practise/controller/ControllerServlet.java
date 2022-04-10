@@ -12,6 +12,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 14f9168147178dfafe8d3d089928ad85815342d4
 import javax.print.attribute.standard.JobOriginatingUserName;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +23,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 @WebServlet(urlPatterns = "/api/*", name = "ControllerServlet", description = "Simple servlet to return data from db in JSON format")
+=======
+@WebServlet(urlPatterns = "/api", name = "ControllerServlet", description = "Simple servlet to return data from db in JSON format")
+>>>>>>> 14f9168147178dfafe8d3d089928ad85815342d4
 public class ControllerServlet extends HttpServlet {
     static LogFileCreator l;
     String errormsg = "";
@@ -33,13 +41,22 @@ public class ControllerServlet extends HttpServlet {
     public final static String Driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     public final static String connectionString = "jdbc:sqlserver://localhost:1433;databasename=Users;";
 
+<<<<<<< HEAD
     public void init() throws ServletException
     {
+=======
+    public void init() throws ServletException {
+>>>>>>> 14f9168147178dfafe8d3d089928ad85815342d4
         try {
             this.l = new LogFileCreator(logFilePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 14f9168147178dfafe8d3d089928ad85815342d4
         this.dbconnnmaker = new DatabaseConnectionMaker(dbusername, dbpassword,Driver, connectionString);
         try {
             connection = dbconnnmaker.dbConnectionCheck();
@@ -55,9 +72,14 @@ public class ControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         String servletPath1= request.getServletPath();
+<<<<<<< HEAD
         String servletpath2 =request.getPathInfo();
 
         switch (servletpath2)
+=======
+
+        switch (servletPath1)
+>>>>>>> 14f9168147178dfafe8d3d089928ad85815342d4
         {
             case "/getUsers":
                 getUsers(request,response);
@@ -68,6 +90,12 @@ public class ControllerServlet extends HttpServlet {
         }
 
     }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 14f9168147178dfafe8d3d089928ad85815342d4
     private void getUsers(HttpServletRequest request,HttpServletResponse response) throws IOException {
         ArrayList<User> userList=new ArrayList<User>();
         try(Statement statement = connection.createStatement())
