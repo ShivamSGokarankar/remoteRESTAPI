@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body >
+<div   ng-controller="mycontroller" class="user-list-container" >
+ <input type="text" ng-model='search'placeholder="Search username here">
+<ul >
+    <li ng-repeat="x in da | filter:search ">{{x.username}}</li>
+</ul>
+
+
+</div>
+</body>
+
+
+</html>
